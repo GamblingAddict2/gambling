@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🃏 Blackjack</h1>
+  <p id="money">Money: $0</p>
+  
+  <p>Bet Amount: <input type="number" id="bet" value="50" min="10"></p>
+  <button id="dealBtn">Deal</button>
+  <button id="hitBtn" disabled>Hit</button>
+  <button id="standBtn" disabled>Stand</button>
+
+  <h2>Your Hand</h2>
+  <div id="playerHand"></div>
+  <p id="playerScore"></p>
+
+  <h2>Dealer's Hand</h2>
+  <div id="dealerHand"></div>
+  <p id="dealerScore"></p>
+
+  <p id="status"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
