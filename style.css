@@ -23,3 +23,13 @@ button:disabled {
   margin-top: 20px;
   font-size: 20px;
 }
+
+#slotDisplay {
+  font-size: 50px;
+  margin: 20px 0;
+}
+#slotDisplay span {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+}
