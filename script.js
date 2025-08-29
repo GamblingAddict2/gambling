@@ -34,21 +34,33 @@ if (document.title.includes("Slot Machine")) {
     localStorage.setItem("money", money - 10);
     updateMoneyDisplay();
 
-    // Roll
-    const winChance = 1 * luck; // base 20% * luck multiplier
-    if (Math.random() < winChance) {
-      const winnings = Math.floor(Math.random() * 200) + 50;
-      result.textContent = "You won $" + winnings + "!";
-      localStorage.setItem("money", parseInt(localStorage.getItem("money")) + winnings);
-      updateMoneyDisplay();
+    const symbols = ["🍒","🍋","🍊","🍇","🍉","🍀","7️⃣"];
+    const slot1 = symbols[Math.floor(Math.random() * symbols.length)];
+    const slot2 = symbols[Math.floor(Math.random() * symbols.length)];
+    const slot3 = symbols[Math.floor(Math.random() * symbols.length)];
+
+    document.getElementById("slot1").textContent = slot1;
+    document.getElementById("slot2").textContent = slot2;
+    document.getElementById("slot3").textContent = slot3;
+
+    let winnings = 0;
+    if (slot1 === slot2 && slot2 === slot3) {
+      winnings = 500 * luck;
+      result.textContent = "🎉 TRIPLE! You won $" + winnings + "!";
+    } else if (slot1 === slot2 || slot2 === slot3 || slot1 === slot3) {
+      winnings = 100 * luck;
+      result.textContent = "✨ Double match! You won $" + winnings + "!";
     } else {
-      result.textContent = "You lost!";
+      result.textContent = "No win this time.";
     }
+
+    localStorage.setItem("money", parseInt(localStorage.getItem("money")) + winnings);
+    updateMoneyDisplay();
 
     // Cooldown (3 sec)
     cooldown = true;
     spinBtn.disabled = true;
-    let timeLeft = 1;
+    let timeLeft = 3;
     cooldownEl.textContent = "Cooldown: " + timeLeft;
     const interval = setInterval(() => {
       timeLeft--;
@@ -162,6 +174,7 @@ if (document.title.includes("Blackjack")) {
 
     if (playerScore > 21) {
       result = "You busted! 💥";
+      money -= bet;
     } else if (dealerScore > 21 || playerScore > dealerScore) {
       result = "You win! 🎉";
       money += bet;
