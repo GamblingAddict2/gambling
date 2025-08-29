@@ -35,7 +35,7 @@ if (document.title.includes("Slot Machine")) {
     updateMoneyDisplay();
 
     // Roll
-    const winChance = 0.2 * luck; // base 20% * luck multiplier
+    const winChance = 0.4 * luck; // base 20% * luck multiplier
     if (Math.random() < winChance) {
       const winnings = Math.floor(Math.random() * 200) + 50;
       result.textContent = "You won $" + winnings + "!";
@@ -48,7 +48,7 @@ if (document.title.includes("Slot Machine")) {
     // Cooldown (3 sec)
     cooldown = true;
     spinBtn.disabled = true;
-    let timeLeft = 3;
+    let timeLeft = 1;
     cooldownEl.textContent = "Cooldown: " + timeLeft;
     const interval = setInterval(() => {
       timeLeft--;
