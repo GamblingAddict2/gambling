@@ -148,7 +148,7 @@ if (document.title.includes("Blackjack")) {
     playerScoreP.textContent = "Score: " + calculateScore(playerHand);
 
     if (hideDealer) {
-      dealerHandDiv.textContent = dealerHand[0].value + dealerHand[0].suit + " [hidden]";
+      dealerHandDiv.textContent = dealerHand[0].value + dealerHand[0].suit + " [?]";
       dealerScoreP.textContent = "Score: ?";
     } else {
       dealerHandDiv.textContent = dealerHand.map(c => c.value + c.suit).join(" ");
