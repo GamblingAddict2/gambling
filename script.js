@@ -35,7 +35,7 @@ if (document.title.includes("Slot Machine")) {
     updateMoneyDisplay();
 
     // Roll
-    const winChance = 0.4 * luck; // base 20% * luck multiplier
+    const winChance = 1 * luck; // base 20% * luck multiplier
     if (Math.random() < winChance) {
       const winnings = Math.floor(Math.random() * 200) + 50;
       result.textContent = "You won $" + winnings + "!";
