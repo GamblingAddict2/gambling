@@ -60,7 +60,7 @@ if (document.title.includes("Slot Machine")) {
     // Cooldown (3 sec)
     cooldown = true;
     spinBtn.disabled = true;
-    let timeLeft = 3;
+    let timeLeft = 1;
     cooldownEl.textContent = "Cooldown: " + timeLeft;
     const interval = setInterval(() => {
       timeLeft--;
@@ -86,7 +86,7 @@ if (document.title.includes("Slot Machine")) {
       localStorage.setItem("money", money - 500);
       localStorage.setItem("luck", parseInt(localStorage.getItem("luck")) + 1);
       updateMoneyDisplay();
-      result.textContent = "Luck upgraded! 🍀";
+      result.textContent = "Money Earned Upgraded.";
     } else {
       result.textContent = "Not enough money!";
     }
