@@ -9,7 +9,7 @@ if (localStorage.getItem("luck") === null) {
 function updateMoneyDisplay() {
   const money = parseInt(localStorage.getItem("money"));
   document.querySelectorAll("#money").forEach(el => el.textContent = "Money: $" + money);
-}F
+}
 
 // --- SLOT MACHINE LOGIC ---
 if (document.title.includes("Slot Machine")) {
