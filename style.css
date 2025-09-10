@@ -33,7 +33,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-#arrow {
+#arrowBack, #arrowBlackjack, #arrowRoulette {
   margin-top: 20px;
   font-size: 20px;
   display: inline-block;
@@ -41,35 +41,31 @@ button:disabled {
   text-decoration: none;
   background: #000;
   padding: 8px 14px;
-  border-radius: 50%;
+  border-radius: 12px;
   box-shadow: 0 0 8px #000;
   transition: background 0.2s;
 }
 
-#arrow:hover {
+#arrowBack a, #arrowBlackjack a, #arrowRoulette a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#arrowBack:hover, #arrowBlackjack:hover, #arrowRoulette:hover {
   background: #444;
 }
 
 #slotDisplay {
+  font-size: 50px;
   margin: 20px 0;
 }
-
 #slotDisplay span {
   display: inline-block;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
+  width: 70px;
   text-align: center;
-  font-size: 60px;
-  margin: 0 10px;
-  background: linear-gradient(145deg, #fff, #ddd);
-  border: 3px solid #000;
-  border-radius: 12px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.4), inset 0 2px 6px rgba(255,255,255,0.6);
-  user-select: none;
-  transition: transform 0.2s;
 }
 
-#slotDisplay span:active {
-  transform: scale(0.95);
+#rouletteWheel {
+  font-size: 40px;
+  margin: 20px;
 }
